@@ -1,0 +1,5 @@
+target/
+.mvn/timing.properties
+*.log
+*.class
+

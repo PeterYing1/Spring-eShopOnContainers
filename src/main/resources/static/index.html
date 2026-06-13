@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spring eShop MVP</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">Spring Boot MVP</p>
+      <h1>eShopOnContainers</h1>
+    </div>
+    <div class="header-actions">
+      <span id="status" aria-live="polite"></span>
+      <button id="checkout">Checkout</button>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="section-title">
+        <h2>Catalog</h2>
+        <span id="count"></span>
+      </div>
+      <div id="catalog" class="grid"></div>
+    </section>
+
+    <aside>
+      <div class="section-title">
+        <h2>Basket</h2>
+        <span id="basket-total">$0.00</span>
+      </div>
+      <div id="basket"></div>
+      <div class="orders">
+        <div class="section-title">
+          <h2>Orders</h2>
+          <button id="refresh-orders">Refresh</button>
+        </div>
+        <div id="orders"></div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

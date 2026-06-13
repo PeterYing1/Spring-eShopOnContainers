@@ -1,0 +1,168 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  color: #14213d;
+  background: #f7f8fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #dde3ea;
+  display: flex;
+  justify-content: space-between;
+  padding: 22px clamp(18px, 4vw, 54px);
+}
+
+.header-actions {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+}
+
+#status {
+  color: #627084;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.eyebrow {
+  color: #0f766e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+main {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  padding: 28px clamp(18px, 4vw, 54px);
+}
+
+.section-title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}
+
+.item, aside {
+  background: #ffffff;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+}
+
+.item {
+  overflow: hidden;
+}
+
+.item img {
+  aspect-ratio: 16 / 10;
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+
+.item-body {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.muted {
+  color: #627084;
+  font-size: 13px;
+}
+
+.price {
+  font-size: 19px;
+  font-weight: 800;
+}
+
+button {
+  background: #0f766e;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  min-height: 38px;
+  padding: 0 14px;
+}
+
+button.secondary {
+  background: #e8eef3;
+  color: #14213d;
+}
+
+aside {
+  align-self: start;
+  padding: 18px;
+  position: sticky;
+  top: 16px;
+}
+
+.basket-line, .order-line {
+  border-top: 1px solid #e7ecf1;
+  display: grid;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.line-actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.qty {
+  background: #f1f5f9;
+  border-radius: 6px;
+  display: inline-grid;
+  min-width: 38px;
+  place-items: center;
+}
+
+.orders {
+  margin-top: 24px;
+}
+
+@media (max-width: 860px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    position: static;
+  }
+}

@@ -10,9 +10,9 @@ mvn spring-boot:run
 
 Then open:
 
-- App UI: <http://localhost:8080>
-- H2 console: <http://localhost:8080/h2-console>
-- Health: <http://localhost:8080/hc>
+- App UI: <http://localhost:8081>
+- H2 console: <http://localhost:8081/h2-console>
+- Health: <http://localhost:8081/hc>
 
 Use JDBC URL `jdbc:h2:mem:eshop`, user `sa`, and an empty password for the H2 console.
 

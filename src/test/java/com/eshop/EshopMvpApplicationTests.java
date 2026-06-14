@@ -77,8 +77,9 @@ class EshopMvpApplicationTests {
                                   "cardTypeId": 2,
                                   "buyer": "demo-user"
                                 }
-                                """))
-                .andExpect(status().isAccepted());
+                """))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.orderNumber").isNumber());
 
         mockMvc.perform(get("/api/v1/orders").header("x-user-id", "demo-user"))
                 .andExpect(status().isOk())

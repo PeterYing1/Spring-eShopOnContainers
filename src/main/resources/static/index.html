@@ -19,7 +19,7 @@
   </header>
 
   <main>
-    <section>
+    <section id="shop-view">
       <div class="section-title">
         <h2>Catalog</h2>
         <span id="count"></span>
@@ -41,6 +41,48 @@
         <div id="orders"></div>
       </div>
     </aside>
+
+    <section id="payment-view" class="payment-view" hidden>
+      <div class="section-title">
+        <h2>Payment</h2>
+        <button id="back-to-shop" class="secondary">Back to shop</button>
+      </div>
+      <div id="payment-summary"></div>
+      <div class="payment-actions">
+        <button id="pay-order">Pay order</button>
+      </div>
+    </section>
+
+    <section id="credit-card-view" class="payment-view" hidden>
+      <div class="section-title">
+        <h2>Credit Card Payment</h2>
+        <button id="back-to-payment" class="secondary">Back to payment</button>
+      </div>
+      <div class="payment-layout">
+        <div id="credit-card-summary"></div>
+        <form id="credit-card-form" class="payment-card">
+          <label>
+            Cardholder name
+            <input id="card-holder" name="cardHolder" autocomplete="cc-name" required value="Demo User">
+          </label>
+          <label>
+            Card number
+            <input id="card-number" name="cardNumber" autocomplete="cc-number" inputmode="numeric" required value="4012888888881881">
+          </label>
+          <div class="form-grid">
+            <label>
+              Expiration
+              <input id="card-expiration" name="cardExpiration" autocomplete="cc-exp" required value="12/28">
+            </label>
+            <label>
+              Security code
+              <input id="card-security" name="cardSecurity" autocomplete="cc-csc" inputmode="numeric" required value="123">
+            </label>
+          </div>
+          <button type="submit" id="submit-card-payment">Submit payment</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <script src="/app.js"></script>

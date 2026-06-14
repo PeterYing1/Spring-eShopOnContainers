@@ -40,10 +40,10 @@ public class BasketController {
                                       @RequestHeader(value = "x-requestid", required = false) String requestId,
                                       @Valid @RequestBody BasketCheckout checkout) {
         return baskets.findExisting(userId)
-                .map(basket -> {
-                    orders.createFromCheckout(userId, requestId == null || requestId.isBlank() ? checkout.requestId() : requestId, checkout, basket);
+                .<ResponseEntity<?>>map(basket -> {
+                    int orderNumber = orders.createFromCheckout(userId, requestId == null || requestId.isBlank() ? checkout.requestId() : requestId, checkout, basket);
                     baskets.delete(userId);
-                    return ResponseEntity.accepted().build();
+                    return ResponseEntity.accepted().body(java.util.Map.of("orderNumber", orderNumber));
                 })
                 .orElseGet(() -> ResponseEntity.badRequest().body(java.util.Map.of("messages", java.util.List.of("Basket does not exist."))));
     }

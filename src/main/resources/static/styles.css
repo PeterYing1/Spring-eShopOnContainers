@@ -120,6 +120,11 @@ button {
   padding: 0 14px;
 }
 
+button:disabled {
+  cursor: default;
+  opacity: .55;
+}
+
 button.secondary {
   background: #e8eef3;
   color: #14213d;
@@ -157,6 +162,77 @@ aside {
   margin-top: 24px;
 }
 
+.payment-view {
+  grid-column: 1 / -1;
+}
+
+.payment-card {
+  background: #ffffff;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+  display: grid;
+  gap: 14px;
+  max-width: 680px;
+  padding: 18px;
+}
+
+.payment-lines {
+  border-top: 1px solid #e7ecf1;
+  display: grid;
+  gap: 10px;
+  padding-top: 14px;
+}
+
+.payment-line,
+.payment-total {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-total {
+  border-top: 1px solid #e7ecf1;
+  font-size: 18px;
+  padding-top: 14px;
+}
+
+.payment-actions {
+  margin-top: 16px;
+}
+
+.payment-layout {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 320px) minmax(0, 420px);
+}
+
+form.payment-card {
+  max-width: none;
+}
+
+label {
+  color: #334155;
+  display: grid;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 6px;
+}
+
+input {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #14213d;
+  font: inherit;
+  min-height: 40px;
+  padding: 8px 10px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+}
+
 @media (max-width: 860px) {
   main {
     grid-template-columns: 1fr;
@@ -164,5 +240,10 @@ aside {
 
   aside {
     position: static;
+  }
+
+  .payment-layout,
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 }

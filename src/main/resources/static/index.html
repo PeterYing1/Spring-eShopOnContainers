@@ -45,28 +45,32 @@
     <section id="payment-view" class="payment-view" hidden>
       <div class="section-title">
         <h2>Payment</h2>
-        <button id="back-to-shop" class="secondary">Back to shop</button>
+        <button id="back-to-shop" class="secondary">Back to Shop</button>
       </div>
       <div id="payment-summary"></div>
       <div class="payment-actions">
-        <button id="pay-order">Pay order</button>
+        <button id="pay-order">Pay Order</button>
       </div>
     </section>
 
     <section id="credit-card-view" class="payment-view" hidden>
       <div class="section-title">
         <h2>Credit Card Payment</h2>
-        <button id="back-to-payment" class="secondary">Back to payment</button>
+        <button id="back-to-payment" class="secondary">Back to Payment</button>
       </div>
       <div class="payment-layout">
         <div id="credit-card-summary"></div>
         <form id="credit-card-form" class="payment-card">
           <label>
-            Cardholder name
+            Cardholder Name
             <input id="card-holder" name="cardHolder" autocomplete="cc-name" required value="Demo User">
           </label>
           <label>
-            Card number
+            Card Type
+            <select id="card-type" name="cardType" required></select>
+          </label>
+          <label>
+            Card Number
             <input id="card-number" name="cardNumber" autocomplete="cc-number" inputmode="numeric" required value="4012888888881881">
           </label>
           <div class="form-grid">
@@ -75,11 +79,11 @@
               <input id="card-expiration" name="cardExpiration" autocomplete="cc-exp" required value="12/28">
             </label>
             <label>
-              Security code
+              Security Code
               <input id="card-security" name="cardSecurity" autocomplete="cc-csc" inputmode="numeric" required value="123">
             </label>
           </div>
-          <button type="submit" id="submit-card-payment">Submit payment</button>
+          <button type="submit" id="submit-card-payment">Submit Payment</button>
         </form>
       </div>
     </section>

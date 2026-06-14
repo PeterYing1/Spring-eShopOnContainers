@@ -1,5 +1,6 @@
 const buyerId = "demo-user";
 let catalogItems = [];
+let cardTypes = [];
 let basket = { buyerId, items: [] };
 let currentPaymentOrder = null;
 
@@ -93,6 +94,19 @@ async function loadCatalog() {
       </div>
     </article>
   `).join("");
+}
+
+async function loadCardTypes() {
+  cardTypes = await api("/api/v1/orders/cardtypes");
+  renderCardTypes();
+}
+
+function renderCardTypes() {
+  const cardTypeSelect = document.querySelector("#card-type");
+  cardTypeSelect.innerHTML = cardTypes.map(type => `
+    <option value="${type.id}">${type.name}</option>
+  `).join("");
+  cardTypeSelect.value = cardTypes.some(type => type.id === 2) ? "2" : String(cardTypes[0]?.id || "");
 }
 
 async function loadBasket() {
@@ -225,6 +239,6 @@ document.querySelector("#pay-order").addEventListener("click", showCreditCardPay
 document.querySelector("#back-to-payment").addEventListener("click", () => showPayment(currentPaymentOrder.ordernumber));
 document.querySelector("#credit-card-form").addEventListener("submit", submitCreditCardPayment);
 
-Promise.all([loadCatalog(), loadBasket(), loadOrders()]).catch(error => {
+Promise.all([loadCatalog(), loadCardTypes(), loadBasket(), loadOrders()]).catch(error => {
   document.body.insertAdjacentHTML("beforeend", `<pre>${error.message}</pre>`);
 });

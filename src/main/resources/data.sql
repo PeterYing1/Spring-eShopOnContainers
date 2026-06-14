@@ -40,12 +40,12 @@ INSERT INTO ordering.cardtypes (Id, Name) VALUES
     (4, 'Capital One');
 
 INSERT INTO ordering.orderstatus (Id, Name) VALUES
-    (1, 'submitted'),
-    (2, 'awaitingvalidation'),
-    (3, 'stockconfirmed'),
-    (4, 'paid'),
-    (5, 'shipped'),
-    (6, 'cancelled');
+    (1, 'Submitted'),
+    (2, 'Awaiting Validation'),
+    (3, 'Stock Confirmed'),
+    (4, 'Paid'),
+    (5, 'Shipped'),
+    (6, 'Cancelled');
 
 ALTER TABLE CatalogBrand ALTER COLUMN Id RESTART WITH 8;
 ALTER TABLE CatalogType ALTER COLUMN Id RESTART WITH 7;

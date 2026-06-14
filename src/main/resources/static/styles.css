@@ -218,9 +218,11 @@ label {
   gap: 6px;
 }
 
-input {
+input,
+select {
   border: 1px solid #cbd5e1;
   border-radius: 6px;
+  background: #ffffff;
   color: #14213d;
   font: inherit;
   min-height: 40px;

@@ -83,7 +83,7 @@ class EshopMvpApplicationTests {
 
         mockMvc.perform(get("/api/v1/orders").header("x-user-id", "demo-user"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].status", is("submitted")))
+                .andExpect(jsonPath("$[0].status", is("Submitted")))
                 .andExpect(jsonPath("$[0].total", is(39.0)));
 
         mockMvc.perform(get("/api/v1/basket/demo-user"))
